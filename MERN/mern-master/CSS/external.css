@@ -1,0 +1,18 @@
+:root{
+    --bitchassNigga: #000000;
+    --mainTransition: all 0.4s linear;
+    --niggassBitch: #ffff;
+}
+.heading {
+    color: var(--bitchassNigga);
+}
+
+.main{
+    color: var(--niggassBitch);
+}
+
+.haha{
+    color: var(--niggassBitch);
+}
+ 
+

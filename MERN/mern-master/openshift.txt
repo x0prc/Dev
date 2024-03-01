@@ -1,0 +1,10 @@
+Red Hat OpenShift: 
+    - Container platform build for hybrid cloud strategy. 
+    - Runs on top of Kubernetes.
+ 
+Features: 
+    - Platform to manage hybrid, multi, and edge cloud deployments 
+    - Built on Linux, Containers and automation
+    - Provides full stack automation and self-service 
+    - Additional tooling for complete lifecycle
+    - Scalable, Flexible, Open Source, Portable, Enhanced Dev Exp, Automated, Streamline, Multi cluster management, Persistent Storage

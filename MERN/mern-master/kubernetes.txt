@@ -1,0 +1,107 @@
+Kubernetes Control Plane:
+
+    Worker Nodes:
+        1. Kube-Controller Manager: Monitors cluster state, ensures actual state matches the desired state
+        2. Cloud Controller Manager: Interact with underlying cloud providers, link with API 
+        3. Kube API Server: Exposes the API, Several Instances
+        4. Kube Scheduler: Location of workload run
+        5. etcd: All Cluster Data, Defines the state
+
+    Nodes: 
+         - Worker machines in Kubernetes
+         - Physical or Virtual machines
+         - Managed by control Plane
+         - Include Pods (smallest deployment entity)
+
+    Kubelet: 
+        - Communicates with API Server
+        - Ensures that Pods are running
+        - Reports to control plane on pods' health and status
+
+    Container Runtime: 
+        - Download images and run containers
+        - Implements an interface 
+
+
+Objects (Persistent Entities): 
+    - Bundle of software data having an identity, state and behavior
+
+Pods: 
+    - Simplest Unit in Kubernetes
+    - Represents currently running processes in the cluster
+    - Encapsulates one/more containers
+
+ReplicaSet:     
+    - Horizontally scaled running Pods 
+    
+Deployment:
+    - Run multiple replicas of an application
+    - Suitable for stateless applications
+
+Service:
+    REST Object, like Pods
+    - Logical abstraction for a set of Pods in a cluster
+    - Provides policies for accessing the Pods and cluster
+    - Acts as a load balancer across the Pods.
+
+        Cluster IP Service: 
+            - Assigned an internal IP Address to the ClusterIP Service only within the cluster
+            - Cannot make requests from outstide the Cluster
+            - Provides interservice intercommunication within the cluster
+
+
+ kubectl : Imperative Commands = 
+           CRUD Live Objects Directly
+           Easiest to learn 
+           Flexible
+           Dev and Test Envs
+
+
+ReplicaSet:
+    - Ensures the right number of pods are always up and running.
+    - Tries to match actual state with desired state. 
+    - Replaces failing pods or deletes additional pods.
+    - Created in YAML format
+
+Autoscaling: 
+    - Scaling as needed not automatically. 
+    - Cluster and Node Level. 
+    - Types: Horizontal (HPA), Vertical(VPA), Cluster(CA)
+
+        - Horizontal: Adjusts number of replicas by increasing or decreasing the number of pods 
+        - Vertical: Adjusts resource requests and limits of a container by increasing or decreasing the resource size or speed of pods. 
+        - Cluster: Adjusts the number of nodes in cluster when pods fail to schedule. Applies new or adjusts the currrent pods.  
+
+Deployment Strategies: 
+    - Application's lifecycle maintaining the config state for objects and apps in automated manner. 
+    - Deploying, Updating, rolling back ReplicaSets, Pods, Services, apps
+    
+        Types: 
+            1. Recreate
+            2. rolling
+            3. Blue/Green
+            4. Canary
+            5. A/B Testing
+            6. Shadow
+
+                    1. Recreate: Existing pods are shut down and simultaneously new versions of the applications are deployed. 
+                    2. Rolling: Each pod is updated one at a time. Each v1 Pod is replaced with v2 Pod. (all at once and one at once)
+                    3. Blue/Green: Blue is the live environment. Green is the newer version of the same and is thoroughly tested. 
+                    4. Canary: New version of the application is tested among a random group of users alongside current version of live application. 
+                    5. A/B: Evaluates two versions of an application (a and b). Each version has features vatering to different sets of users. 
+                    6. Shadow: A shadow version is deployed alongside the live version of the app. User requests are sent to both versions, both handle the requests, but shadow doesnt not forward responses back to the users. 
+
+
+ConfigMap: 
+    - Helps avoid hard-coding config variables into app code. 
+    - API object use to store non-confidential data in key-value pairs
+    - No secrecy or encryption
+    - Provides config data to pods and deployments. 
+    - Reusable 
+    - YAML Descriptor file or key = value method
+
+Service Binding: 
+    - Process to consume external services or backing services. 
+    - Configs and credentials for back-end services. 
+    - service creds are automatically protected with a secret
+    
