@@ -1,0 +1,36 @@
+;  Simple example program to compute thei
+;  sum of squares from 1 to n.
+; **********************************************
+;  Data declarations
+section .data
+; -----
+;  Define constants
+SUCCESS equ 0 SYS_exit equ 60
+;  Define Data.
+n dd10 sumOfSquares dq 0
+; Successful operation
+; call code for terminate
+; *******************************************************
+section .text
+global _start _start:
+; -----
+; Compute sum of squares from 1 to n (inclusive). ; Approach:
+; for (i=1; i<=n; i++)
+;
+mov sumLoop:
+mov
+rbx, 1
+ecx, dword [n]
+; i
+; get i ; i^2
+sumOfSquares += i^2;
+mov rax, rbx
+mul rax
+add qword [sumOfSquares], rax inc rbx
+loop sumLoop
+; -----
+;  Done, terminate program.
+last:
+mov rax, SYS_exit mov rdi, SUCCESS syscall
+; call code for exit
+; exit with success
