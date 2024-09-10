@@ -1,4 +1,6 @@
-<#include <iostream>
+#include <iostream>
+#include <conio.h>
+#include <string.h>
 
 int main (int argc, char *argv[]) {
   
@@ -10,6 +12,12 @@ class item{
 
   int number; //private by default
   float cost;
+
+  //used for updating private members without accessing through objects.
+  void sample :: update(void)
+  {
+    read();
+  }
 
   public:
     void getdata(int a, float b); //inside the class definition
@@ -36,3 +44,5 @@ void item :: putdata(void)
   cout << number << "\n";
   cout << cost << "\n";
 }
+// can also make outside functions inline by adding 'inline' in the header line.
+
