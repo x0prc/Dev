@@ -27,3 +27,16 @@ fn new(){
         sign_in_count: 1,
     };
 }
+
+// functions
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+let x = add(1,1);
+let y = add(3,0);
+let z = add(x,5);
+
+//macros
+println!("Hello!");
+println!("{:?}", life);
+println!("{:?}, {:?}", life, life); // for debugging
