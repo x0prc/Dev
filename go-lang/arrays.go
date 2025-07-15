@@ -15,3 +15,18 @@ func getMessageWithRetries(plan string) ([]string, error)
 }
 
 func (f *File) Read(buf []byte) (n int, err error)
+
+// slices
+mySlice := []string{"I", "Am", "A Developer"}
+mySlice := make([]int, 5) // and len or cap for length or capacity
+
+slice = append(slice, oneThing) // add values via append
+
+//2D Matrix / Slice of a Slice
+rows := [][]int{}
+
+// range 
+fruits := []string{"apple", "banana", "grape"}
+for i, fruit := range fruits {
+	fmt.Println(i, fruit)
+}
