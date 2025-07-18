@@ -34,3 +34,14 @@ case i, ok := <- chInts: // if ready, exec.
 case s, ok := <- chStrings:
 	fmt.println(s) // if all ready, one is chosen randomly.
 }
+
+// time tickers
+func saveBackups(snapshotTicker, saveAfter <-chan time.Time){
+}
+
+// read and write only channels
+func readCh(ch <-chan int){
+}
+
+func writeCh(ch chan<- int){
+}
