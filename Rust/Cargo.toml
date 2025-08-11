@@ -1,4 +1,4 @@
 [package]
-name = "dev-with-rust"
+name = "src-rust"
 version = "0.0.1"
 edition = "2024"
