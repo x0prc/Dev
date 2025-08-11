@@ -3,7 +3,7 @@ use std::io;
 fn main() {
     let mut x = 5;
     println!("Value of x is: {x}");
-    x = 6;
+    assert_eq!(x = 6); //asserts that if x is not 6, the program quits.
     println!("Value of x is: {x}");
 }
 fn boolean() {
