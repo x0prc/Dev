@@ -53,3 +53,49 @@ fn main() {
     };
     print_drink(drink);
 }
+
+// pattern matching
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+fn main() {
+    let msg = Message::Move{x: 1, y: 1};
+
+    if let Message::Move{x: a, y: b} = msg {
+        assert_eq!(a, b);
+    } else {
+        panic!("NEVER LET THIS RUN！");
+    }
+
+    println!("Success!");
+} 
+
+
+[#derive(Debug)]
+// Fill in the blank and fix the errors
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+fn main() {
+    let msgs: [Message; 3] = [
+        Message::Quit,
+        Message::Move{x:1, y:3},
+        Message::ChangeColor(255,255,0)
+    ];
+
+    for msg in msgs {
+        show_message(msg)
+    }
+} 
+
+fn show_message(msg: Message) {
+    println!("{:?}", msg);
+}
